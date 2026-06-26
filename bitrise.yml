@@ -31,7 +31,6 @@ workflows:
       an IPA file from the project and save it.
     steps:
     - git-clone@8: {}
-    - git-lfs-pull@0: {}
     - script@1:
         title: Prepare ASC key (.p8), modern .p12, relax pbxproj signing for App Store archive
         inputs:
@@ -111,7 +110,6 @@ workflows:
   build_for_testing:
     steps:
     - git-clone@8: {}
-    - git-lfs-pull@0: {}
     - xcode-build-for-test@3:
         inputs:
         - project_path: "$APP_FACTORY_PROJECT_PATH"
@@ -134,7 +132,6 @@ workflows:
       the test results.
     steps:
     - git-clone@8: {}
-    - git-lfs-pull@0: {}
     - xcode-test@6:
         inputs:
         - project_path: "$APP_FACTORY_PROJECT_PATH"
